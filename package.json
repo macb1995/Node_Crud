@@ -1,20 +1,28 @@
 {
-  "name": "tarea_node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/macb1995/Tarea_Node.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/macb1995/Tarea_Node/issues"
-  },
-  "homepage": "https://github.com/macb1995/Tarea_Node#readme"
+    "name": "tarea_node",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/macb1995/Tarea_Node.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/macb1995/Tarea_Node/issues"
+    },
+    "homepage": "https://github.com/macb1995/Tarea_Node#readme",
+    "dependencies": {
+        "ejs": "^3.1.8",
+        "express": "^4.18.1",
+        "mysql": "^2.18.1",
+        "nodemon": "^2.0.19"
+    }
 }
