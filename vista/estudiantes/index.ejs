@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiantes</title>
+</head>
+
+<body>
+    <h1>Estudiantes</h1>
+    <table border="1px">
+        <thead>
+            <th>id</th>
+            <th>carne</th>
+            <th>nombres</th>
+            <th>apellidos</th>
+            <th>dirección</th>
+            <th>correo</th>
+            <th>tipo de sangre</th>
+            <th>fecha nacimiento</th>
+        </thead>
+        <tbody>
+            <% resultado.forEach((estudiante)=>{ %>
+                <tr>
+                    <td>
+                        <%= estudiante.id_estudiante %>
+                    </td>
+                    <td>
+                        <%= estudiante.carne_estudiante %>
+                    </td>
+                    <td>
+                        <%= estudiante.nombres %>
+                    </td>
+                    <td>
+                        <%= estudiante.apellidos%>
+                    </td>
+                    <td>
+                        <%= estudiante.direccion %>
+                    </td>
+                    <td>
+                        <%= estudiante.correo_e %>
+                    </td>
+                    <td>
+                        <%= estudiante.id_tipo_sangre %>
+                    </td>
+                    <td>
+                        <%= estudiante.fecha_nacimiento %>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</body>
+
+</html>
