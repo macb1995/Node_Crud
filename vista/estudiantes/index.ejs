@@ -10,6 +10,19 @@
 
 <body>
     <h1>Estudiantes</h1>
+    <form action="/crud_c" method="post">
+        <input type="text" id="txt_id" name="txt_id" placeholder="id">
+        <input type="text" id="txt_carne" name="txt_carne" placeholder="Ingrese carnet">
+        <input type="text" id="txt_nombres" name="txt_nombres" placeholder="Ingrese nombre(s)">
+        <input type="text" id="txt_apellidos" name="txt_apellidos" placeholder="Ingrese apellido(s)">
+        <input type="text" id="txt_direccion" name="txt_direccion" placeholder="Ingrese dirección">
+        <input type="text" id="txt_correo" name="txt_correo" placeholder="Ingrese correo electronico">
+        <input type="text" id="txt_tipo_sangre" name="txt_tipo_sangre" placeholder="Ingrese tipo de sangre">
+        <input type="date" id="txt_fn" name="txt_fn" placeholder="Fecha nacimiento">
+        <button type="submit" id="btn_crear" name="btn_crear" value="crear">Crear</button>
+        <button type="submit" id="btn_actualizar" name="btn_actualizar" value="actualizar">Actualizar</button>
+        <button type="submit" id="btn_borrar" name="btn_borrar" value="borrar">Borrar</button>
+    </form>
     <table border="1px">
         <thead>
             <th>id</th>

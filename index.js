@@ -1,6 +1,8 @@
 import express from "express"
-import { conectar } from "./modelo/db_conectar.js";
+import { crud_estudiante } from "./controlador/crud_estudiantes.js";
 const app_e = express();
+app_e.use(express.urlencoded({ extended: false }));
+app_e.use(express.json());
 app_e.use(express.static('./vista'))
 app_e.use(express.static('./controlador'))
 app_e.use(express.static('./modelo'))
@@ -10,11 +12,5 @@ app_e.set('view engine', 'ejs')
 app_e.listen('5000', function() {
     console.log('Aplicación iniciada en: http://localhost:5000')
 })
-app_e.get('/', function(req, res) {
-    conectar.query('select * from estudiantes', (error, results) => {
-        if (error) {
-            throw error;
-        } else res.render('estudiantes/index')
-    })
-
-})
+app_e.get('/', crud_estudiante.leer);
+app_e.post('/crud_c', crud_estudiante.cud)
