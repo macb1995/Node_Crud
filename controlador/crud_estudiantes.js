@@ -2,7 +2,7 @@ import express from "express"
 import { conectar } from "../modelo/db_conectar.js"
 var crud_estudiante = ({})
 crud_estudiante.leer = (req, res) => {
-    conectar.query('SELECT id_estudiante,carne_estudiante,nombres,apellidos,direccion,correo_e,id_tipo_sangre,date_format(fecha_nacimiento,"%d-%m-%Y") as fecha_nacimiento FROM estudiantes;', (error, results) => {
+    conectar.query('SELECT id_estudiante,carnet,nombres,apellidos,direccion,telefono,genero,email,date_format(fecha_nacimiento,"%d-%m-%Y") as fecha_nacimiento FROM estudiantes;', (error, results) => {
         if (error) {
             throw error;
         } else {
@@ -15,15 +15,16 @@ crud_estudiante.cud = (req, res) => {
     const btn_actualizar = req.body.btn_actualizar;
     const btn_borrar = req.body.btn_borrar;
     const id_estudiante = req.body.txt_id;
-    const carne_estudiante = req.body.txt_carne;
+    const carnet = req.body.txt_carnet;
     const nombres = req.body.txt_nombres;
     const apellidos = req.body.txt_apellidos;
-    const direccion = req.body.direccion;
-    const correo_e = req.body.txt_correo;
-    const id_tipo_sangre = req.body.txt_tipo_sangre;
+    const direccion = req.body.txt_direccion;
+    const telefono = req.body.txt_telefono;
+    const genero = req.body.txt_genero;
+    const email = req.body.txt_email;
     const fecha_nacimiento = req.body.txt_fn;
     if (btn_crear) {
-        conectar.query('insert into estudiantes set ?', { carne_estudiante: carne_estudiante, nombres: nombres, apellidos: apellidos, direccion: direccion, correo_e: correo_e, id_tipo_sangre: id_tipo_sangre, fecha_nacimiento: fecha_nacimiento }, (error, results) => {
+        conectar.query('insert into estudiantes set ?', { carnet: carnet, nombres: nombres, apellidos: apellidos, direccion: direccion, telefono: telefono, genero: genero, email: email, fecha_nacimiento: fecha_nacimiento }, (error, results) => {
             if (error) {
                 console.log(error);
             } else {
@@ -32,7 +33,7 @@ crud_estudiante.cud = (req, res) => {
         });
     }
     if (btn_actualizar) {
-        conectar.query('update estudiantes set ? where id_estudiante = ?', [{ carne_estudiante: carne_estudiante, nombres: nombres, apellidos: apellidos, direccion: direccion, correo_e: correo_e, id_tipo_sangre: id_tipo_sangre, fecha_nacimiento: fecha_nacimiento }, id_estudiante], (error, results) => {
+        conectar.query('update estudiantes set ? where id_estudiante = ?', [{ carnet: carnet, nombres: nombres, apellidos: apellidos, direccion: direccion, telefono: telefono, genero: genero, email: email, fecha_nacimiento: fecha_nacimiento }, id_estudiante], (error, results) => {
             if (error) {
                 console.log(error);
             } else {

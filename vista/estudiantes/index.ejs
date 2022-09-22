@@ -10,14 +10,16 @@
 
 <body>
     <h1>Estudiantes</h1>
+
     <form action="/crud_c" method="post">
         <input type="text" id="txt_id" name="txt_id" placeholder="id">
-        <input type="text" id="txt_carne" name="txt_carne" placeholder="Ingrese carnet">
+        <input type="text" id="txt_carnet" name="txt_carnet" placeholder="Ingrese carnet">
         <input type="text" id="txt_nombres" name="txt_nombres" placeholder="Ingrese nombre(s)">
         <input type="text" id="txt_apellidos" name="txt_apellidos" placeholder="Ingrese apellido(s)">
         <input type="text" id="txt_direccion" name="txt_direccion" placeholder="Ingrese dirección">
-        <input type="text" id="txt_correo" name="txt_correo" placeholder="Ingrese correo electronico">
-        <input type="text" id="txt_tipo_sangre" name="txt_tipo_sangre" placeholder="Ingrese tipo de sangre">
+        <input type="text" id="txt_telefono" name="txt_telefono" placeholder="Número telefonico">
+        <input type="text" id="txt_genero" name="txt_genero" placeholder="Masculino o Femenino">
+        <input type="text" id="txt_email" name="txt_email" placeholder="Ingrese correo electronico">
         <input type="date" id="txt_fn" name="txt_fn" placeholder="Fecha nacimiento">
         <button type="submit" id="btn_crear" name="btn_crear" value="crear">Crear</button>
         <button type="submit" id="btn_actualizar" name="btn_actualizar" value="actualizar">Actualizar</button>
@@ -26,12 +28,13 @@
     <table border="1px">
         <thead>
             <th>id</th>
-            <th>carne</th>
+            <th>carnet</th>
             <th>nombres</th>
             <th>apellidos</th>
             <th>dirección</th>
+            <th>Télefono</th>
+            <th>genero</th>
             <th>correo</th>
-            <th>tipo de sangre</th>
             <th>fecha nacimiento</th>
         </thead>
         <tbody>
@@ -41,7 +44,7 @@
                         <%= estudiante.id_estudiante %>
                     </td>
                     <td>
-                        <%= estudiante.carne_estudiante %>
+                        <%= estudiante.carnet %>
                     </td>
                     <td>
                         <%= estudiante.nombres %>
@@ -53,10 +56,13 @@
                         <%= estudiante.direccion %>
                     </td>
                     <td>
-                        <%= estudiante.correo_e %>
+                        <%= estudiante.telefono %>
                     </td>
                     <td>
-                        <%= estudiante.id_tipo_sangre %>
+                        <%= estudiante.genero %>
+                    </td>
+                    <td>
+                        <%= estudiante.email %>
                     </td>
                     <td>
                         <%= estudiante.fecha_nacimiento %>
